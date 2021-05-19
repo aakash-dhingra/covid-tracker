@@ -144,19 +144,19 @@
     /* margin-top: 30px; */
     font-family: 'Merriweather', serif;
     color:darkblue;
-    font-size: 5vmax;
+    font-size: 4.5vmax;
 }
 #act_daily{
     /* margin-top: 50px; */
     font-family: 'Merriweather', serif;
     color: red;
-    font-size: 4vmax;
+    font-size: 3.5vmax;
 }
 #rec_daily{
     /* margin-top: 50px; */
     font-family: 'Merriweather', serif;
     color: darkgreen;
-    font-size: 4vmax;
+    font-size: 3.5vmax;
 }
 .cntdata{
     /* border: 2px solid green; */
@@ -255,3 +255,54 @@ span{
     text-align: center;
    padding-top: 300px;
 }
+
+@media screen and (max-width: 652px) {
+    *{
+        margin: 0;
+        padding: 0;
+        letter-spacing: 1px;
+    }
+    .navbar{
+        width: 100%;
+
+        /* display: none; */
+        /* position: absolute; */
+    }
+    body{
+        
+        /* width: 100vw; */
+    }
+    #side{
+        width: 20%;
+        height: 100%;
+    }
+    .full{
+        display: flex;
+        /* margin-left: 18%; */
+        flex-direction: column-reverse;
+        height: 200vh;
+        width: 100vw;
+    }
+    #right{
+        width: 80%;
+        /* height: 100%; */
+        margin-left: 20%;
+    }
+    #left{
+        width: 80%;
+        height: 100%;
+
+        margin-left: 20%;   
+    }
+    #left h1{
+        font-size: 2vmax;
+    }
+    #news{
+        width: 80%;
+        margin-left: 20%;
+
+    }
+    .ul{
+        width: 80%;
+    }
+  }
