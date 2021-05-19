@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <title>Corona Cases</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div id="leftnav">
+            <img src="./img/icon1.png" alt="">
+            <h1>Covid Count</h1>
+        </div>
+        <div id="rightnav">
+            <a href="#">Home</a>
+            <a href="#news">News</a>
+            <a href="#">Blogs</a>
+        </div>
+
+    </nav>
+    <div id="side" class="bg-dark">
+        <h3 style="color: orangered; font-weight: bold;">I</h3>
+        <h3 style="color: orangered; font-weight: bold;">N</h3>
+        <h3 style="color: orangered; font-weight: bold;">D</h3>
+        <h3 style="color: orangered; font-weight: bold;">I</h3>
+        <h3 style="color: orangered; font-weight: bold;">A</h3>
+        <br>
+        <h3 style="color: white; font-weight: bold;">FIGHTS</h3>
+        <br>
+        <h3 style="color: green; font-weight: bold;">T</h3>
+        <h3 style="color: green; font-weight: bold;">O</h3>
+        <h3 style="color: green; font-weight: bold;">G</h3>
+        <h3 style="color: green; font-weight: bold;">E</h3>
+        <h3 style="color: green; font-weight: bold;">T</h3>
+        <h3 style="color: green; font-weight: bold;">H</h3>
+        <h3 style="color: green; font-weight: bold;">E</h3>
+        <h3 style="color: green; font-weight: bold;">R</h3>
+    </div>
+    <div class="full">
+
+
+
+        <div id="right">
+            <input type="text" id="inp" placeholder="Enter State">
+            <button id="btn">Search</button>
+            <ul class="ul">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div id="left">
+            <h1 id="date" class="text">Updated On: <span id="dated"></span></h1>
+            <div id="head" class="text">
+                <h1>Total Cases Today</h1>
+                <h2 id="cnt_daily"></h2>
+            </div>
+            <div id="cnt" class="text">
+                <div class="cntdata" id="rec">
+                    <h1>Recovered Now</h1>
+                    <h2 id="rec_daily"></h2>
+                </div>
+                <div class="cntdata" id="active">
+                    <h1>Recovered Total </h1>
+                    <h2 id="act_daily"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="news">
+        <h1>Page will be available Soon!!!!</h1>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
