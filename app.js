@@ -38,7 +38,7 @@ async function getCases() {
         let date = fetchedData.data.statewise[0].lastupdatedtime;
     }
     else{
-        alert(`Sorry For the inconvenience caused!!!  Latest Count of ${currentDate()} is not yet updated from the server side`);
+        alert(`Sorry For the inconvenience caused!!!  Latest Count of ${currentDate()} is not yet updated from the source`);
         total = fetchedData.data.cases_time_series[size-1].dailyconfirmed;
         recT = fetchedData.data.cases_time_series[size-1].totalrecovered;
         recovered = fetchedData.data.cases_time_series[size-1].dailyrecovered;
