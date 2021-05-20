@@ -263,17 +263,35 @@ span{
         letter-spacing: 1px;
     }
     .navbar{
-        width: 100%;
+        width: 100vw;
 
         /* display: none; */
         /* position: absolute; */
+    }
+    #leftnav{
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        
+    }
+    #changetext{
+        font-size: 2vmax;
+    }
+    img{
+        display: none;
+    }
+    #leftnav h1{
+        font-size: 3vmax;
+    }
+    #rightnav{
+        display: none;
     }
     body{
         
         /* width: 100vw; */
     }
     #side{
-        width: 20%;
+        width: 15%;
         height: 100%;
     }
     .full{
@@ -281,25 +299,25 @@ span{
         /* margin-left: 18%; */
         flex-direction: column-reverse;
         height: 200vh;
-        width: 100vw;
+        /* width: 100vw; */
     }
     #right{
-        width: 80%;
+        width: 85%;
         /* height: 100%; */
-        margin-left: 20%;
+        margin-left: 15%;
     }
     #left{
-        width: 80%;
+        width: 85%;
         height: 100%;
 
-        margin-left: 20%;   
+        margin-left: 15%;   
     }
     #left h1{
         font-size: 2vmax;
     }
     #news{
-        width: 80%;
-        margin-left: 20%;
+        width: 85%;
+        margin-left: 15%;
 
     }
     .ul{
