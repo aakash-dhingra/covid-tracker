@@ -394,10 +394,7 @@ span{
 
 
 
-    body{
-        
-        /* width: 100vw; */
-    }
+    
     #side{
         width: 15%;
         height: 100%;
@@ -436,7 +433,15 @@ span{
         width: 85%;
         height: 15vh;
     }
-    .mame{
+    .right-1{
         width: 30%;
+    }
+    .heading-foot{
+        width: 20%;
+    }
+    #mame{
+        width: 50%;
+        background-image: none;
+        background-color: #e5e5e5;
     }
   }
