@@ -65,6 +65,7 @@ getCases();
 btn.addEventListener('click', (e) => {
     e.preventDefault();
     console.log(input.value);
+    
     var city = input.value;
     findCases(city);
     input.value = "";
@@ -88,17 +89,19 @@ async function findCases(city) {
     for (let i = 0; i < size - 1; i++) {
         if (city.toString().toLowerCase() == fetchedData.data.statewise[i].state.toLowerCase()) {
             let state = fetchedData.data.statewise[i].state;
-            let totalL = "Not Updated";
+            let totalL = fetchedData.data.statewise[i].deltaconfirmed;
             let recTL = fetchedData.data.statewise[i].recovered;
-            let recoveredL = "Not Updated";
+            let recoveredL = fetchedData.data.statewise[i].deltarecovered;
             let dateL = fetchedData.data.statewise[i].lastupdatedtime;
-            if(fetchedData.data.statewise[0].deltaconfirmed!=0 && fetchedData.data.statewise[i].deltaconfirmed!=0) {
+            if(fetchedData.data.statewise[i].deltaconfirmed==0) {
                 // state = fetchedData.data.statewise[i].state;
-                totalL = fetchedData.data.statewise[i].deltaconfirmed;
+                totalL =  "Not Updated";
                 // recTL = fetchedData.data.statewise[i].recovered;
-                recoveredL = fetchedData.data.statewise[i].deltarecovered;
+                recoveredL =  "Not Updated";
+                swal("Sorry for Inconvenience! ", `Latest information for ${state} on ${currentDate()} is not available. Keep Looking after sometime.`);
                 // dateL = fetchedData.data.statewise[i].lastupdatedtime;
             }
+            
             li[0].innerHTML=`State: <span>${state}</span>`;
             li[1].innerHTML=`Cases Today: <span>${totalL}</span>`;
             li[2].innerHTML=`Recovered Today: <span>${recoveredL}</span>`;
