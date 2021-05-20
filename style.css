@@ -112,6 +112,19 @@
     align-items: center;
     
 }
+#dated{
+    animation: 500ms blink infinite alternate-reverse;
+}
+@keyframes blink{
+    0%{
+        background-color: #f2f5de;
+    }
+    
+    100%{
+        background-color: #87c38f;
+    }
+}
+
 #date{
     margin: 0px auto;
     text-align: center;

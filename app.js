@@ -35,6 +35,7 @@ async function getCases() {
     let recT = undefined;
     let recovered = undefined;
     let date = undefined;
+    
     if(fetchedData.data.statewise[0].deltaconfirmed!=0) {
          total = fetchedData.data.statewise[0].deltaconfirmed;
          recT = fetchedData.data.statewise[0].recovered;
@@ -87,24 +88,29 @@ async function findCases(city) {
     for (let i = 0; i < size - 1; i++) {
         if (city.toString().toLowerCase() == fetchedData.data.statewise[i].state.toLowerCase()) {
             let state = fetchedData.data.statewise[i].state;
-            let totalL = fetchedData.data.statewise[i].deltaconfirmed;
+            let totalL = "Not Updated";
             let recTL = fetchedData.data.statewise[i].recovered;
-            let recoveredL = fetchedData.data.statewise[i].deltarecovered;
+            let recoveredL = "Not Updated";
             let dateL = fetchedData.data.statewise[i].lastupdatedtime;
-            if(fetchedData.data.statewise[0].deltaconfirmed!=0) {
-                li[0].innerHTML=`State: <span>${state}</span>`;
-                li[1].innerHTML=`Cases Today: <span>${totalL}</span>`;
-                li[2].innerHTML=`Recovered Today: <span>${recoveredL}</span>`;
-                li[3].innerHTML=`Recovered Total: <span>${recTL}</span>`;
-                li[4].innerHTML=`Last Updated : <span>${dateL}</span>`;
+            if(fetchedData.data.statewise[0].deltaconfirmed!=0 && fetchedData.data.statewise[i].deltaconfirmed!=0) {
+                // state = fetchedData.data.statewise[i].state;
+                totalL = fetchedData.data.statewise[i].deltaconfirmed;
+                // recTL = fetchedData.data.statewise[i].recovered;
+                recoveredL = fetchedData.data.statewise[i].deltarecovered;
+                // dateL = fetchedData.data.statewise[i].lastupdatedtime;
             }
-            else{
-                li[0].innerHTML=`State: <span>${state}</span>`;
-                li[1].innerHTML=`Cases Today: <span>Not Updated</span>`;
-                li[2].innerHTML=`Recovered Today: <span>Not Updated</span>`;
-                li[3].innerHTML=`Recovered Total: <span>${recTL}</span>`;
-                li[4].innerHTML=`Last Updated : <span>${dateL}</span>`;
-            }
+            li[0].innerHTML=`State: <span>${state}</span>`;
+            li[1].innerHTML=`Cases Today: <span>${totalL}</span>`;
+            li[2].innerHTML=`Recovered Today: <span>${recoveredL}</span>`;
+            li[3].innerHTML=`Recovered Total: <span>${recTL}</span>`;
+            li[4].innerHTML=`Last Updated : <span id="anime">${dateL}</span>`;
+                //  else if(fetchedData.data.statewise[0].deltaconfirmed!=0) {
+            //     li[0].innerHTML=`State: <span>${state}</span>`;
+            //     li[1].innerHTML=`Cases Today: <span>Not Updated</span>`;
+            //     li[2].innerHTML=`Recovered Today: <span>Not Updated</span>`;
+            //     li[3].innerHTML=`Recovered Total: <span>${recTL}</span>`;
+            //     li[4].innerHTML=`Last Updated : <span>${dateL}</span>`;
+            // }
             ul[0].classList.add('sec');
             ul[0].style.display="flex";
             console.log(totalL);
