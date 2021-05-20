@@ -27,17 +27,21 @@ function closeMenu() {
 
 
 async function getCases() {
-    const url = `	https://api.covid19india.org/data.json `;
+    const url = `https://api.covid19india.org/data.json `;
     const fetchedData = await axios.get(url, { mode: 'no-cors' });
     console.dir(fetchedData);
     let size = fetchedData.data.cases_time_series.length;
+    let total = undefined;
+    let recT = undefined;
+    let recovered = undefined;
+    let date = undefined;
     if(fetchedData.data.statewise[0].deltaconfirmed!=0) {
-        let total = fetchedData.data.statewise[0].deltaconfirmed;
-        let recT = fetchedData.data.statewise[0].recovered;
-        let recovered = fetchedData.data.statewise[0].deltarecovered;
-        let date = fetchedData.data.statewise[0].lastupdatedtime;
+         total = fetchedData.data.statewise[0].deltaconfirmed;
+         recT = fetchedData.data.statewise[0].recovered;
+         recovered = fetchedData.data.statewise[0].deltarecovered;
+         date = fetchedData.data.statewise[0].lastupdatedtime;
     }
-    else{
+    else{   
         alert(`Sorry For the inconvenience caused!!!  Latest Count of ${currentDate()} is not yet updated from the source`);
         total = fetchedData.data.cases_time_series[size-1].dailyconfirmed;
         recT = fetchedData.data.cases_time_series[size-1].totalrecovered;
