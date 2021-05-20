@@ -7,6 +7,24 @@ const dated = document.querySelector('#dated');
 const li = document.querySelectorAll('li');
 const ul = document.querySelectorAll('ul');
 
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+console.dir(navMenu);
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+
 
 async function getCases() {
     const url = `	https://api.covid19india.org/data.json `;
@@ -65,6 +83,7 @@ async function findCases(city) {
             li[3].innerHTML=`Recovered Total: <span>${recTL}</span>`;
             li[4].innerHTML=`Last Updated : <span>${dateL}</span>`;
             ul[0].classList.add('sec');
+            ul[0].style.display="flex";
             console.log(totalL);
             console.log(recTL);
             console.log(recoveredL);

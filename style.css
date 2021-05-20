@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+    overflow: hidden;
     align-items: center;
     background-color: #e5e5e5;
 }
@@ -57,7 +57,7 @@
 .full{
     display: flex;
     flex-direction: row;
-    height: 90vh;
+    height: 100vh;
     padding-top: 70px;
 }
 #side{
@@ -70,7 +70,7 @@
     justify-content: center;
     align-items: center;
     position: fixed;
-    height: 90vh;
+    height: 100vh;
     margin-top: 70px;
     /* background-color: black; */
 }
@@ -100,11 +100,16 @@
     height: 100%;
     /* border: 2px solid black;   */
     background-color: aquamarine;
-    text-align: center;
+    /* text-align: center; */
+    animation-duration: 1s;
     background-image: url(./img/map11.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
 #date{
@@ -191,8 +196,8 @@
     box-sizing: border-box;
     width: 70%;
     padding: 20px;
-    margin-top: 100px;
-    font-size: 1.2rem;
+    /* margin-top: 100px; */
+    font-size: 2vmax;
     border-radius: 10px;
     border: 2px solid black;
 }
@@ -204,7 +209,7 @@
     width: 30%;
     margin-top: 20px;
     padding: 10px;
-    font-size: 1rem;   
+    font-size: 2vmax;   
     background-color: #e9ff70;
 }
 #btn:hover{
@@ -227,7 +232,7 @@
     justify-content: space-evenly;
     align-items: center;
     font-size: 1.2rem;
-   
+    display: none;
 }
 .sec{
     background-image: linear-gradient(
@@ -256,6 +261,68 @@ span{
    padding-top: 300px;
 }
 
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.footer{
+    height: 20vh;
+    width: 92%;
+    margin-left: 8%;
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.heading-foot{
+    /* border: 2px solid red; */
+    width: 40%;
+    height: 50%;
+}
+.heading-foot h3{
+    font-size: 2vmax;
+}
+.right-1{
+    width: 20%;
+    height: 50%;
+    text-align: center;
+}
+.right-1 i{
+    font-size: 5vmax;
+    height: 50%;
+    /* border: 2px solid red; */
+    
+}
+#mame{
+    height: 100%;
+    width: 40%;
+    /* border: 2px solid red; */
+    background-image: linear-gradient(
+        to right,
+        rgba(44, 43, 43, 0.507),
+        rgba(255, 255, 255, 0.425)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.5vmax;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
 @media screen and (max-width: 652px) {
     *{
         margin: 0;
@@ -268,24 +335,65 @@ span{
         /* display: none; */
         /* position: absolute; */
     }
+   
     #leftnav{
         display: flex;
-        width: 100%;
-        justify-content: space-evenly;
-        
+        width: 60%;
+        justify-content: space-between;
+        margin-left: 10px;
     }
+    
+    
     #changetext{
-        font-size: 2vmax;
+        font-size: 1.7vmax;
     }
     img{
-        display: none;
+        /* display: none; */
+        width: 5%;
+        
     }
     #leftnav h1{
         font-size: 3vmax;
     }
     #rightnav{
-        display: none;
+        position: fixed;
+        top: -100%;
+        left: 15%;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.863);
+         
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
     }
+    #rightnav.active {
+        top: 70px;
+        height: 80%;
+        width: 100%;
+    }
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        margin-right: 30px;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+
+
     body{
         
         /* width: 100vw; */
@@ -322,5 +430,13 @@ span{
     }
     .ul{
         width: 80%;
+    }
+    .footer{
+        margin-left: 15%;
+        width: 85%;
+        height: 15vh;
+    }
+    .mame{
+        width: 30%;
     }
   }

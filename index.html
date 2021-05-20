@@ -8,9 +8,14 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Corona Cases</title>
 </head>
 
@@ -19,11 +24,18 @@
         <div id="leftnav">
             <img src="./img/icon1.png" alt="">
             <h1>Covid Count</h1>
+
         </div>
-        <div id="rightnav">
-            <a href="#">Home</a>
-            <a href="#news">News</a>
-            <a href="#">Blogs</a>
+        <div id="rightnav" class="nav-menu">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#right" class="nav-link">State Stats</a>
+            <a href="#news" class="nav-link">News</a>
+        </div>
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
 
     </nav>
@@ -35,7 +47,7 @@
             <h3 style="color: orangered; font-weight: bold;">I</h3>
             <h3 style="color: orangered; font-weight: bold;">A</h3>
             <br>
-            <h3 id="changetext" data-active="BEAT" style="color: white; font-weight: bold;">FIGHTS</h3>
+            <h3 id="changetext" style="color: white; font-weight: bold;">FIGHTS</h3>
             <br>
             <h3 style="color: green; font-weight: bold;">T</h3>
             <h3 style="color: green; font-weight: bold;">O</h3>
@@ -46,11 +58,17 @@
             <h3 style="color: green; font-weight: bold;">E</h3>
             <h3 style="color: green; font-weight: bold;">R</h3>
         </div>
+
+
+
         <div class="full">
 
 
 
             <div id="right">
+                <h2>Find Your State Data</h2>
+                <br>
+                <br>
                 <input type="text" id="inp" placeholder="Enter State">
                 <button id="btn">Search</button>
                 <ul class="ul">
@@ -84,6 +102,28 @@
     <section id="news">
         <h1>Page will be available Soon!!!!</h1>
     </section>
+
+    <footer>
+        <div class="footer">
+            <div class="heading-foot">
+                <h3><b> Connect @ </b></h3>
+            </div>
+            <div id="mame">
+                <h3>Aakash Dhingra</h3>
+                <h5>aakashdhingra1495@gmail.com</h5>
+            </div>
+            <div class="right-1">
+                <a href="https://twitter.com/AakashDhingra30" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/aakash-dhingra-03465217a/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
+            </div>
+
+
+        </div>
+    </footer>
+
+
+
 
     <script src="app.js"></script>
 </body>
