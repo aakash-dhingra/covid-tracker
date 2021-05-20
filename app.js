@@ -30,11 +30,21 @@ async function getCases() {
     const url = `	https://api.covid19india.org/data.json `;
     const fetchedData = await axios.get(url, { mode: 'no-cors' });
     console.dir(fetchedData);
-    // let size = fetchedData.data.cases_time_series.length;
-    let total = fetchedData.data.statewise[0].deltaconfirmed;
-    let recT = fetchedData.data.statewise[0].recovered;
-    let recovered = fetchedData.data.statewise[0].deltarecovered;
-    let date = fetchedData.data.statewise[0].lastupdatedtime;
+    let size = fetchedData.data.cases_time_series.length;
+    if(fetchedData.data.statewise[0].deltaconfirmed!=0) {
+        let total = fetchedData.data.statewise[0].deltaconfirmed;
+        let recT = fetchedData.data.statewise[0].recovered;
+        let recovered = fetchedData.data.statewise[0].deltarecovered;
+        let date = fetchedData.data.statewise[0].lastupdatedtime;
+    }
+    else{
+        alert(`Latest Count of ${currentDate()} is not updated yet from the server side`);
+        total = fetchedData.data.cases_time_series[size-1].dailyconfirmed;
+        recT = fetchedData.data.cases_time_series[size-1].totalrecovered;
+        recovered = fetchedData.data.cases_time_series[size-1].dailyrecovered;
+        date = fetchedData.data.cases_time_series[size-1].date;
+        
+    }
     console.log(total);
     console.log(recT);
     console.log(recovered);
@@ -77,11 +87,20 @@ async function findCases(city) {
             let recTL = fetchedData.data.statewise[i].recovered;
             let recoveredL = fetchedData.data.statewise[i].deltarecovered;
             let dateL = fetchedData.data.statewise[i].lastupdatedtime;
-            li[0].innerHTML=`State: <span>${state}</span>`;
-            li[1].innerHTML=`Cases Today: <span>${totalL}</span>`;
-            li[2].innerHTML=`Recovered Today: <span>${recoveredL}</span>`;
-            li[3].innerHTML=`Recovered Total: <span>${recTL}</span>`;
-            li[4].innerHTML=`Last Updated : <span>${dateL}</span>`;
+            if(fetchedData.data.statewise[0].deltaconfirmed!=0) {
+                li[0].innerHTML=`State: <span>${state}</span>`;
+                li[1].innerHTML=`Cases Today: <span>${totalL}</span>`;
+                li[2].innerHTML=`Recovered Today: <span>${recoveredL}</span>`;
+                li[3].innerHTML=`Recovered Total: <span>${recTL}</span>`;
+                li[4].innerHTML=`Last Updated : <span>${dateL}</span>`;
+            }
+            else{
+                li[0].innerHTML=`State: <span>${state}</span>`;
+                li[1].innerHTML=`Cases Today: <span>Not Updated</span>`;
+                li[2].innerHTML=`Recovered Today: <span>Not Updated</span>`;
+                li[3].innerHTML=`Recovered Total: <span>${recTL}</span>`;
+                li[4].innerHTML=`Last Updated : <span>${dateL}</span>`;
+            }
             ul[0].classList.add('sec');
             ul[0].style.display="flex";
             console.log(totalL);
@@ -92,6 +111,15 @@ async function findCases(city) {
     }
 }
 
+
+
+function currentDate() {
+    var WeekDay = new Date;
+    // let week = ["Sunday", "Monday", "Tuesday", "Wednday", "Thrusday", "Friday", "Saturday"];
+    let month = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let day = WeekDay.getDate();
+    return `${day}-${month[WeekDay.getMonth()]}-${WeekDay.getFullYear()}`;
+}
 
 
 

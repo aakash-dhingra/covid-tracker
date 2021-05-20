@@ -338,7 +338,7 @@ span{
    
     #leftnav{
         display: flex;
-        width: 60%;
+        width: 70%;
         justify-content: space-between;
         margin-left: 10px;
     }
@@ -437,10 +437,10 @@ span{
         width: 30%;
     }
     .heading-foot{
-        width: 20%;
+        width: 30%;
     }
     #mame{
-        width: 50%;
+        width: 40%;
         background-image: none;
         background-color: #e5e5e5;
     }
