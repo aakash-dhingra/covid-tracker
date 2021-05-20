@@ -342,7 +342,9 @@ span{
         justify-content: space-between;
         margin-left: 10px;
     }
-    
+    #head{
+        width: 60%;
+    }
     
     #changetext{
         font-size: 1.7vmax;
