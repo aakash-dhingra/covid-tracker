@@ -142,8 +142,36 @@ function currentDate() {
 
 
 
+const options = {
+  method: 'GET',
+  url: 'https://coronavirus-smartable.p.rapidapi.com/news/v1/IN/',
+  headers: {
+    'x-rapidapi-key': 'eb0ac16eebmshe3e03b8049012f4p15db25jsn489e2492765c',
+    'x-rapidapi-host': 'coronavirus-smartable.p.rapidapi.com'
+  }
+};
 
+axios.request(options).then(function (response) {
+	console.dir(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
+// import axios from "axios";
 
+// const options = {
+//   method: 'GET',
+//   url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/asia',
+//   headers: {
+//     'x-rapidapi-key': 'eb0ac16eebmshe3e03b8049012f4p15db25jsn489e2492765c',
+//     'x-rapidapi-host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com'
+//   }
+// };
+
+// axios.request(options).then(function (response) {
+// 	console.log(response.data);
+// }).catch(function (error) {
+// 	console.error(error);
+// });
 
 
 
